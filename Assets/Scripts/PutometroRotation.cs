@@ -10,6 +10,7 @@ public class PutometroRotation : MonoBehaviour {
     [SerializeField][Range(0f, 0.1f)] float pointerSpeed;
 
     void Update () {
-        pointer.transform.rotation = Quaternion.Lerp(pointer.transform.rotation, Quaternion.Euler(0f, 0f, rotationAngle), pointerSpeed);
+        rotationAngle = rotationPercentage / (100f/180);
+        pointer.transform.rotation = Quaternion.Lerp(pointer.transform.rotation, Quaternion.Euler(0f, 0f, -rotationAngle), pointerSpeed);
     }       
 }

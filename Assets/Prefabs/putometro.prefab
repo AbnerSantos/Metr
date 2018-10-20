@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4569850674213952}
   - component: {fileID: 212290786560002290}
-  - component: {fileID: 114487725684908504}
+  - component: {fileID: 114005894145923174}
   m_Layer: 0
   m_Name: arrow
   m_TagString: Untagged
@@ -71,7 +71,7 @@ Transform:
   m_Father: {fileID: 4053163575953012}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114487725684908504
+--- !u!114 &114005894145923174
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -79,13 +79,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1853781283782298}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6f29fcaf57d5d544f8f1384c6668603e, type: 3}
+  m_Script: {fileID: 11500000, guid: d45b9837701272f4185d2028ed391579, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   rotationPercentage: 0
   rotationAngle: 0
   pointer: {fileID: 1853781283782298}
-  pointerSpeed: 0.05
+  pointerSpeed: 0.1
 --- !u!212 &212271855747465052
 SpriteRenderer:
   m_ObjectHideFlags: 1

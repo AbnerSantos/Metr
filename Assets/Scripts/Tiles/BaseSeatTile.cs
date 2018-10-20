@@ -14,7 +14,7 @@ public static class SeatType{
 
 public class BaseSeatTile : MonoBehaviour
 {
-
+	public GameObject passenger;
 	[SerializeField] private int seatSize;
 	private int currentVacantGap;
 	public SeatType.seatType type;

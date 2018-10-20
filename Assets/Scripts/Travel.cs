@@ -8,7 +8,7 @@ public class Travel : MonoBehaviour
 	[SerializeField] string[] stationTypes;
 	private float Stoptime;
 	bool isStopped;
-	[SerializeField] bool isTheEnd;
+	bool isTheEnd;
 	private int index;
 	[SerializeField] int sizeofArray;
 	Stations[] stations;
@@ -35,25 +35,27 @@ public class Travel : MonoBehaviour
 	
 	void Update () 
 	{
-		Debug.Log("index: " + index);
-		Debug.Log("Current travel time: " + stations[index].travelTime + " of index: " + index);
-		Debug.Log("Current disStations is: " + stations[index].distStations + " of index: " + index);
+		
 		if(Stoptime > 0 && isStopped == true && index < stationTypes.Length)
 		{
+			//Is stopped in the station
 			Stoptime -= 1;
-			Debug.Log("Stop time is: " + Stoptime + " of index: " + index);
 		}
 		else if(Stoptime <= 0 && isStopped == true  && index < stationTypes.Length)
 		{
+			//the time in the station has ended
 			Stoptime = initialTimer;
-			Debug.Log("Initial stop time is: " + Stoptime);
 			isStopped = false;
+
 			if(index + 1 < stationTypes.Length && isTheEnd == false)
 			{
+				stations[index].distStations = 10 + index;
+				stations[index].travelTime = 10 + index;
 				index++;
 			}
 			else if(index + 1 == stationTypes.Length)
 			{
+				
 				isTheEnd = true;
 			}
 			if(index > 0 && isTheEnd == true)
@@ -63,15 +65,12 @@ public class Travel : MonoBehaviour
 		}
 		else if(isStopped == false && stations[index].travelTime > 0 && stations[index].distStations > 0  && index < stationTypes.Length)
 		{
-			stations[index].travelTime -= 1;
-			Debug.Log("travel time is: " + stations[index].travelTime + " of index: " + index);
+			//is going to the next station
+			stations[index].travelTime -= 1;	
 			stations[index].distStations -= 1;
-			Debug.Log("disStations is: " + stations[index].distStations + " of index: " + index);
 		}
 		else if(isStopped == false && stations[index].travelTime <= 0 && stations[index].distStations <= 0  && index < stationTypes.Length)
 		{
-			stations[index].travelTime = 10 + index;
-			stations[index].distStations = 10 + index;
 			isStopped = true;
 		}
 	}

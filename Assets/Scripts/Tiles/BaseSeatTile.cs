@@ -2,11 +2,22 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+public static class SeatType{
+	public enum seatType{
+		common,
+		fat,
+		preferred,
+		wheelchair,
+		stand
+	};
+}
+
 public class BaseSeatTile : MonoBehaviour
 {
 
 	[SerializeField] private int seatSize;
 	private int currentVacantGap;
+	public SeatType.seatType type;
 
 	private void Awake()
 	{

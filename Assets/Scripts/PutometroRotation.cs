@@ -11,6 +11,6 @@ public class PutometroRotation : MonoBehaviour {
 
     void Update () {
         rotationAngle = rotationPercentage / (100f/180);
-        pointer.transform.rotation = Quaternion.Lerp(pointer.transform.rotation, Quaternion.Euler(0f, 0f, -rotationAngle), pointerSpeed);
+        pointer.transform.rotation = Quaternion.Lerp(pointer.transform.rotation, Quaternion.Euler(0f, 0f, rotationAngle), pointerSpeed);
     }       
 }

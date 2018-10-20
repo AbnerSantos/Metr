@@ -13,32 +13,17 @@ public class BaseSeatTile : MonoBehaviour
 		currentVacantGap = seatSize;
 	}
 
-	private void OnTriggerEnter2D(Collider2D other)
+	public virtual void MovePassenger(Passenger passenger)
 	{
-		if(other.tag == "Passenger")
-		{
-			TryMovePassenger(other.gameObject.GetComponent<Passenger>());
-			Debug.Log("Will try to move.");
-		}
-	}
-
-	protected virtual void TryMovePassenger(Passenger passenger)
-	{
-		if(IsAvailable(passenger))
-		{
-			passenger.currentSeat.currentVacantGap += passenger.size;
-			passenger.currentSeat = this;
-			currentVacantGap -= passenger.size;
-			passenger.SnapToSeat();
-		}
-		else
-			passenger.SnapToSeat();
+		passenger.currentSeat.currentVacantGap += passenger.size;
+		passenger.currentSeat = this;
+		currentVacantGap -= passenger.size;
+		passenger.SnapToSeat();
 	}
 
 	public bool IsAvailable(Passenger passenger)
 	{
-		if(passenger.size <= currentVacantGap &&
-		 Vector2.Distance((Vector2)passenger.currentSeat.transform.position, (Vector2)this.transform.position) <= 1f)
+		if(passenger.size <= currentVacantGap)
 			return true;
 		else
 			return false;

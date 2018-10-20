@@ -6,12 +6,13 @@ public static class SeatType{
 	public enum seatType{
 		common,
 		fat,
-		preferred,
+		special,
 		wheelchair,
-		stand
+		stand,
+        station
 	};
 }
-
+	
 public class BaseSeatTile : MonoBehaviour
 {
 	public GameObject passenger;
@@ -26,6 +27,7 @@ public class BaseSeatTile : MonoBehaviour
 
 	public virtual void MovePassenger(Passenger passenger)
 	{
+		this.passenger = passenger.gameObject;
 		passenger.currentSeat.currentVacantGap += passenger.size;
 		passenger.currentSeat = this;
 		currentVacantGap -= passenger.size;

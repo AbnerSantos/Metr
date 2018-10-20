@@ -9,12 +9,12 @@ public class StationTile : BaseSeatTile{
 
     void Update(){
         if(passenger != null){
-            passengerPutometro = putometro.GetComponent<IndividualPutometro>();
             putometro = GameObject.FindGameObjectWithTag("Putometro");
+            passengerPutometro = putometro.GetComponent<IndividualPutometro>();
             putometroScript = putometro.GetComponent<Putometro>();
 
             putometroScript.UpdatePutometer(passenger.GetComponent<IndividualPutometro>());
             Destroy(passenger);
-        }
+        }   
     }
 }

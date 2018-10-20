@@ -20,9 +20,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4569850674213952}
   - component: {fileID: 212290786560002290}
-  - component: {fileID: 114005894145923174}
   m_Layer: 0
-  m_Name: arrow
+  m_Name: Arrow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -37,9 +36,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4053163575953012}
   - component: {fileID: 212271855747465052}
+  - component: {fileID: 114812855095218990}
   m_Layer: 0
   m_Name: putometro
-  m_TagString: Untagged
+  m_TagString: Putometro
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -50,9 +50,9 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1930531598230696}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 25.71, y: 25.71, z: 25.71}
+  m_LocalScale: {x: 25.71, y: 25.71, z: 1}
   m_Children:
   - {fileID: 4569850674213952}
   m_Father: {fileID: 0}
@@ -64,28 +64,28 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1853781283782298}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.0015480358}
-  m_LocalScale: {x: 0.007139479, y: 0.005919127, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -0.28}
+  m_LocalScale: {x: -0.007139479, y: 0.005919127, z: 0}
   m_Children: []
   m_Father: {fileID: 4053163575953012}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114005894145923174
+--- !u!114 &114812855095218990
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1853781283782298}
+  m_GameObject: {fileID: 1930531598230696}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d45b9837701272f4185d2028ed391579, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationPercentage: 0
-  rotationAngle: 0
+  stressLimit: 100
+  stress: 0
+  pointerSpeed: 0.05
   pointer: {fileID: 1853781283782298}
-  pointerSpeed: 0.1
 --- !u!212 &212271855747465052
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -21,10 +21,11 @@ GameObject:
   - component: {fileID: 4310816937978204}
   - component: {fileID: 58654325584660282}
   - component: {fileID: 114924304051926580}
+  - component: {fileID: 114017953470025908}
   - component: {fileID: 212672733777460404}
   m_Layer: 0
   m_Name: Passenger
-  m_TagString: Untagged
+  m_TagString: Passenger
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -57,6 +58,22 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.1
+--- !u!114 &114017953470025908
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1654290271728292}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3d15423b62e8654882d9006bc63be05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  passenger: {fileID: 0}
+  stress: 0
+  maxStress: 0
+  stressUp: 0
+  repeatCooldown: 0
 --- !u!114 &114924304051926580
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -69,6 +86,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentSeat: {fileID: 0}
+  type: 0
+  stressingSpeed: 0
+  isPassengerSelected: 1
+  mask:
+    serializedVersion: 2
+    m_Bits: 256
   size: 1
 --- !u!212 &212672733777460404
 SpriteRenderer:
@@ -104,7 +127,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 42
   m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

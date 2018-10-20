@@ -1,0 +1,31 @@
+Nível de impaciência individual alterado por:
+	Tempo de espera em pé
+	Tempo de espera em para entrar no metrô 
+	Falta de lugar adequado
+	Falha no metrô
+	Espaço disponível
+
+Nível de impaciência geral alterado por:
+	Nível de impaciência de um passageiro ao sair do metrô
+	Passageiro deixados para trás
+	Passageiro que desceu na estação errada
+
+Tipos de passageiros:		Espaço ocupado
+	Comum			1 tile
+	Obeso			2 tiles
+	Preferencial		1 tile
+		Gestante
+		Idoso
+	Cadeirante		2 tiles
+
+Tipos de assentos:
+	Para obeso		2 tiles
+	Preferencial		1 tile
+	Para cadeirante		2 tiles
+
+Ações:
+	Alocar pessoa
+	Mover pessoa (que está em pé)
+	Retirar pessoa do metrô
+	Substituir pessoas (realocar)
+		Há a probablidade de passageiro ser recusado

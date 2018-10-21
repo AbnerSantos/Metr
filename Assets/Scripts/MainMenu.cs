@@ -29,6 +29,11 @@ public class MainMenu : MonoBehaviour {
 		options.SetActive(false);		
 	}
 
+	public void Rewind(){
+		Destroy(GameObject.FindGameObjectWithTag("Score"));
+		SceneManager.LoadScene(0);
+	}
+
 	public void Options(){
 		options.SetActive(true);
 	}

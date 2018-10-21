@@ -18,7 +18,6 @@ public class Travel : MonoBehaviour
 	void Start () 
 	{
 		index = 0;
-		
 		stations = new Stations[stationTypes.Length];
 		Stoptime = timeInStation;
 		for(int i = 0; i < stationTypes.Length; i++)

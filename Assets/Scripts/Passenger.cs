@@ -140,8 +140,31 @@ public class Passenger : MonoBehaviour
         }
         else
         {
-            transform.position = currentSeat.transform.position;
+            if(currentSeat.slot1 == null && currentSeat.slot2 == null)
+            {
+                currentSeat.slot1 = this;
+                transform.position = currentSeat.transform.position;
+            }
+            else if(currentSeat.slot1 == null)
+            {
+                currentSeat.slot1 = this;
+                currentSeat.slot2.transform.position += Vector3.up/4;
 
+                currentSeat.slot2.CurrentDirection = FacingDirection.Down;
+                currentSeat.slot1.CurrentDirection = FacingDirection.Up;
+
+                transform.position = currentSeat.transform.position + Vector3.down/4;
+            }
+            else if(currentSeat.slot2 == null)
+            {
+                currentSeat.slot2 = this;
+                currentSeat.slot1.transform.position += Vector3.up/4;
+
+                currentSeat.slot2.CurrentDirection = FacingDirection.Down;
+                currentSeat.slot1.CurrentDirection = FacingDirection.Up;
+
+                transform.position = currentSeat.transform.position + Vector3.down/4;
+            }
         }
 
     }

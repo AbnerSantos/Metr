@@ -72,7 +72,7 @@ MonoBehaviour:
   passenger: {fileID: 0}
   stress: 0
   maxStress: 0
-  stressUp: 0
+  stressingSpeed: 0
   repeatCooldown: 0
 --- !u!114 &114942714713458586
 MonoBehaviour:
@@ -86,13 +86,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentSeat: {fileID: 0}
-  type: 0
-  stressingSpeed: 0
+  type: 1
   isPassengerSelected: 0
   mask:
     serializedVersion: 2
     m_Bits: 256
-  size: 1
+  size: 2
   sittingDown: {fileID: 21300000, guid: 258091ed8d289574890e1ff536063b2d, type: 3}
   standingUp: {fileID: 21300000, guid: 031a48ca749f73f48abb876dc05706ac, type: 3}
   sharingTile: {fileID: 0}

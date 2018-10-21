@@ -16,6 +16,7 @@ public static class SeatType{
 public class BaseSeatTile : MonoBehaviour
 {
 	public GameObject passenger;
+	public bool isCrowded = false;
 	public int seatSize;
 	public int currentVacantGap;
 	public SeatType.seatType type;
@@ -30,21 +31,25 @@ public class BaseSeatTile : MonoBehaviour
 	{
 		Debug.Log("Man");
 
-		if((passenger.currentSeat.type == SeatType.seatType.fat 
-		|| passenger.currentSeat.type == SeatType.seatType.wheelchair)
-		&& passenger.type == SeatType.seatType.common)
+		if(passenger.currentSeat.slot1 == passenger)
+			passenger.currentSeat.slot1 = null;
+		else if(passenger.currentSeat.slot2 == passenger)
+			passenger.currentSeat.slot2 = null;
+
+		if(passenger.currentSeat.type == SeatType.seatType.stand)
 		{
-			Debug.Log("Cleaning");
-			if(passenger.currentSeat.slot1 == passenger)
-				passenger.currentSeat.slot1 = null;
-			else if(passenger.currentSeat.slot2 == passenger)
-				passenger.currentSeat.slot2 = null;
+			if(passenger.currentSeat.slot1 != null)
+				passenger.currentSeat.slot1.transform.position = passenger.currentSeat.slot1.currentSeat.transform.position;
+			else if(passenger.currentSeat.slot2 != null)
+				passenger.currentSeat.slot2.transform.position = passenger.currentSeat.slot2.currentSeat.transform.position;
 		}
 
-
-		this.passenger = passenger.gameObject;
+		passenger.currentSeat.passenger = null;
+		passenger.currentSeat.isCrowded = false;
 		passenger.currentSeat.currentVacantGap += passenger.size;
 		passenger.currentSeat = this;
+
+		this.passenger = passenger.gameObject;
 		currentVacantGap -= passenger.size;
 
 		switch(type)

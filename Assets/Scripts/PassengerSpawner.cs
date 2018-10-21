@@ -10,14 +10,15 @@ public class PassengerSpawner : MonoBehaviour
 	private int pIndex;
 	private Passenger pg;
 	void Start ()
-	{
-		seat = GetComponent<BaseSeatTile>();
-		
+	{	
 		for(int i = 0; i < passengerSlots.Length; i++)
 		{
 			pIndex = Random.Range(0, (passengers.Length - 1));
+			Debug.Log(pIndex);
 			Instantiate(passengers[pIndex], passengerSlots[i].transform.position, Quaternion.identity);
 			pg = passengers[pIndex].GetComponent<Passenger>();
+			seat = passengerSlots[i].GetComponent<BaseSeatTile>();
+			pg.currentSeat = seat;
 			seat.MovePassenger(pg);
 		}
 	}

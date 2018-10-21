@@ -21,7 +21,6 @@ public class Passenger : MonoBehaviour
 {
     public BaseSeatTile currentSeat;
     public SeatType.seatType type; //passengerType
-    [Range(0f, 5f)] public float stressingSpeed;
     public bool isPassengerSelected = true;
     [SerializeField] LayerMask mask;
     SpriteRenderer sRender;
@@ -93,11 +92,59 @@ public class Passenger : MonoBehaviour
     {
         currentState = State.StandingUp;
         sRender = GetComponent<SpriteRenderer>();
+        underground = GameObject.FindGameObjectWithTag("Underground").GetComponent<Travel>();
     }
     
     public void SnapToSeat()
     {
-        transform.position = currentSeat.transform.position;
+        if(currentSeat.type == SeatType.seatType.fat)
+        {
+            Vector3 adjustVector;
+
+            if(currentSeat.transform.rotation == Quaternion.Euler(0, 0, 90))
+                adjustVector = Vector3.up;
+            else if(currentSeat.transform.rotation == Quaternion.Euler(0, 0, 270))
+                adjustVector = Vector3.down;
+            else if(currentSeat.transform.rotation == Quaternion.Euler(0, 0, 180))
+                adjustVector = Vector3.left;
+            else
+                adjustVector = Vector3.right;
+
+            if(type == SeatType.seatType.fat)
+                transform.position = currentSeat.transform.position + adjustVector/2;
+            else if(currentSeat.slot1 == null)
+            {
+                currentSeat.slot1 = this;
+                transform.position = currentSeat.transform.position + adjustVector;
+            }
+            else if(currentSeat.slot2 == null)
+            {
+                currentSeat.slot2 = this;
+                transform.position = currentSeat.transform.position;
+            }
+        }
+        else if(currentSeat.type == SeatType.seatType.wheelchair)
+        {
+
+            if(type == SeatType.seatType.wheelchair || type == SeatType.seatType.fat) 
+                transform.position = currentSeat.transform.position;
+            else if(currentSeat.slot1 == null)
+            {
+                currentSeat.slot1 = this;
+                transform.position = currentSeat.transform.position + Vector3.left/2;
+            }
+            else if(currentSeat.slot2 == null)
+            {
+                currentSeat.slot2 = this;
+                transform.position = currentSeat.transform.position + Vector3.right/2;
+            }
+        }
+        else
+        {
+            transform.position = currentSeat.transform.position;
+
+        }
+
     }
 
     private void Update()
@@ -110,10 +157,7 @@ public class Passenger : MonoBehaviour
             if(Input.GetKeyDown(KeyCode.A))
             {
                 if(currentState == State.StandingUp)
-                {
                     tempDirection = FacingDirection.Left;
-                    Debug.Log("???");
-                }
                 direction = Vector2.left;
             }
             else if(Input.GetKeyDown(KeyCode.D))

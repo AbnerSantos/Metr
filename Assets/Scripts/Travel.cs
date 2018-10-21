@@ -9,7 +9,7 @@ public class Travel : MonoBehaviour
 	[SerializeField] string[] stationTypes;
 	private float Stoptime;
 	public bool isStopped;
-	bool isTheEnd;
+	public bool isTheEnd;
 	private int index;
 	
 	Stations[] stations;

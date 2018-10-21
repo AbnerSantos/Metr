@@ -80,7 +80,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   passenger: {fileID: 0}
   seatSize: 1
+  currentVacantGap: 0
   type: 0
+  slot1: {fileID: 0}
+  slot2: {fileID: 0}
 --- !u!212 &212861257541595384
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -117,7 +120,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 73aeaf39d8a236a40ad389b8623bd267, type: 3}
-  m_Color: {r: 0, g: 0.28624558, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

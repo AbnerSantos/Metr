@@ -8,21 +8,21 @@ public class IndividualPutometro : MonoBehaviour {
     private bool repeating = false;
     public float stress = 0f;
     [Range(0f, 500f)]public float maxStress;
-    [SerializeField][Range(0f, 5f)] float stressUp;
+    [SerializeField][Range(0f, 5f)] float stressingSpeed;
     [SerializeField][Range(0f, 5f)] float repeatCooldown;
 
     void IncreaseStress(){
         repeating = true;
         if(stress < maxStress){
-            stress += passenger.stressingSpeed * stressUp;
+            stress += stressingSpeed;
 
             if(stress > maxStress)
                 stress = maxStress;    
         }
 
         if(passenger.currentSeat.type == passenger.type){
-            CancelInvoke();
             repeating = false;
+            CancelInvoke();
         }
     }
 

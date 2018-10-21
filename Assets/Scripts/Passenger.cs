@@ -21,7 +21,6 @@ public class Passenger : MonoBehaviour
 {
     public BaseSeatTile currentSeat;
     public SeatType.seatType type; //passengerType
-    [Range(0f, 5f)] public float stressingSpeed;
     public bool isPassengerSelected = true;
     [SerializeField] LayerMask mask;
     SpriteRenderer sRender;

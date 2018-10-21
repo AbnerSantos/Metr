@@ -14,7 +14,7 @@ public class Putometro : MonoBehaviour {
 	[SerializeField] Travel underground;
     void Update () {
         percentage = (stress * 100) / stressLimit;
-        rotationAngle = (percentage / (100f/270)) - 45;
+        rotationAngle = (percentage / (100f/270)) - 135;
         pointer.transform.rotation = Quaternion.Lerp(pointer.transform.rotation, Quaternion.Euler(0f, 0f, -rotationAngle), pointerSpeed);
     }       
 

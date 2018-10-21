@@ -78,7 +78,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3180ef3bf5a0518439e3334ad7fa6309, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  passenger: {fileID: 0}
   seatSize: 1
+  type: 0
 --- !u!212 &212861257541595384
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -114,7 +116,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 9efe634f242c94e49bc030a95f3122e0, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 73aeaf39d8a236a40ad389b8623bd267, type: 3}
   m_Color: {r: 0, g: 0.28624558, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

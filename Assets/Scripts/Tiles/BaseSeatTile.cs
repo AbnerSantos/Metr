@@ -32,6 +32,23 @@ public class BaseSeatTile : MonoBehaviour
 		passenger.currentSeat = this;
 		currentVacantGap -= passenger.size;
 		passenger.SnapToSeat();
+
+		switch(type)
+		{
+			case SeatType.seatType.common:
+			case SeatType.seatType.special:
+			case SeatType.seatType.fat:
+				passenger.transform.rotation = this.transform.rotation;
+				passenger.CurrentState = Passenger.State.SittingDown;
+				break;
+			case SeatType.seatType.stand:
+			case SeatType.seatType.station:
+			case SeatType.seatType.wheelchair:
+				passenger.CurrentState = Passenger.State.StandingUp;
+				break;
+			default:
+				break;
+		}
 	}
 
 	public bool IsAvailable(Passenger passenger)

@@ -92,7 +92,7 @@ MonoBehaviour:
   mask:
     serializedVersion: 2
     m_Bits: 256
-  size: 2
+  size: 1
   sittingDown: {fileID: 21300000, guid: 9e3ae492cf7a54207a8156157e0a0335, type: 3}
   standingUp: {fileID: 21300000, guid: 0ab432f9afe99440db8bb01f51ead1fd, type: 3}
   sharingTile: {fileID: 0}

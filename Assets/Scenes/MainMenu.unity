@@ -1246,6 +1246,8 @@ MonoBehaviour:
   multiplier: 10
   score: 0
   repeating: 0
+  underground: {fileID: 0}
+  scoreText: {fileID: 0}
 --- !u!4 &1179119421
 Transform:
   m_ObjectHideFlags: 0
@@ -2137,6 +2139,8 @@ MonoBehaviour:
   credits: {fileID: 1899213589}
   options: {fileID: 1957287210}
   score: {fileID: 1179119419}
+  audioClip: {fileID: 0}
+  audioSource: {fileID: 0}
 --- !u!1 &2137648637
 GameObject:
   m_ObjectHideFlags: 0

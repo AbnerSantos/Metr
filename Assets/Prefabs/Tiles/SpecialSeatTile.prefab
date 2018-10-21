@@ -20,7 +20,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4729545005869958}
   - component: {fileID: 212388753606404172}
-  m_Layer: 0
+  - component: {fileID: 114618823442351024}
+  m_Layer: 8
   m_Name: SpecialSeatTile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40,6 +41,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114618823442351024
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1509488031155470}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3180ef3bf5a0518439e3334ad7fa6309, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  passenger: {fileID: 0}
+  seatSize: 0
+  currentVacantGap: 0
+  type: 2
+  slot1: {fileID: 0}
+  slot2: {fileID: 0}
 --- !u!212 &212388753606404172
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -75,8 +93,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 9efe634f242c94e49bc030a95f3122e0, type: 3}
-  m_Color: {r: 0, g: 0.96969414, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 6f27e97a4e4564c9a9fdea64fb9ccd05, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

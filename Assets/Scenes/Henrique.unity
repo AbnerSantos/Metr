@@ -532,8 +532,9 @@ GameObject:
   m_Component:
   - component: {fileID: 267435194}
   - component: {fileID: 267435193}
+  - component: {fileID: 267435195}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: Travel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -550,9 +551,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25ad30d5dabdd2e42811cedc27f0758d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  indicators: {fileID: 999671380}
-  available: {fileID: 11400000, guid: 361b20b1db6c0564b8b4d6adda154bef, type: 2}
-  unavailable: {fileID: 11400000, guid: 7790aed7abe37b34782b95e955543400, type: 2}
+  mask:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!4 &267435194
 Transform:
   m_ObjectHideFlags: 0
@@ -566,6 +567,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &267435195
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 267435192}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24db14a846de03048ad31466022391c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  initialTimer: 300
+  stationTypes:
+  - a
+  - b
+  isStopped: 1
+  sizeofArray: 2
 --- !u!4 &281447871 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4648151685895454, guid: 9f6389c4992729c439ea703b4c3eb996,
@@ -1043,6 +1061,11 @@ Prefab:
       propertyPath: stressingSpeed
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114924304051926580, guid: dc7851db1af7daa4e964f0733fb402c2,
+        type: 2}
+      propertyPath: underground
+      value: 
+      objectReference: {fileID: 267435195}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dc7851db1af7daa4e964f0733fb402c2, type: 2}
   m_IsPrefabAsset: 0

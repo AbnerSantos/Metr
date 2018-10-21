@@ -8,7 +8,7 @@ public class Travel : MonoBehaviour
 	[SerializeField] int sizeofArray;
 	[SerializeField] string[] stationTypes;
 	private float Stoptime;
-	bool isStopped;
+	public bool isStopped;
 	bool isTheEnd;
 	private int index;
 	
@@ -30,7 +30,7 @@ public class Travel : MonoBehaviour
 			stations[i].distStations = 10 + i;
 			stations[i].travelTime = 10 + i;		
 		}
-		isStopped = false;
+		isStopped = true;
 		isTheEnd = false;
 	}
 	

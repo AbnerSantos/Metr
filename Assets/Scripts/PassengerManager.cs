@@ -21,7 +21,7 @@ public class PassengerManager : MonoBehaviour
     {
         Collider2D overlappedObject;
 
-        if(Input.GetMouseButton(0))
+        if(Input.GetMouseButtonDown(0))
         {
             overlappedObject = Physics2D.OverlapPoint(Camera.main.ScreenToWorldPoint(Input.mousePosition), mask);
             if(currentSelectedPassenger != null)

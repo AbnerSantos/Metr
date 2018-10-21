@@ -13,12 +13,12 @@ public class Putometro : MonoBehaviour {
     void Update () {
         percentage = (stress * 100) / stressLimit;
         rotationAngle = percentage / (100f/180);
-        pointer.transform.rotation = Quaternion.Lerp(pointer.transform.rotation, Quaternion.Euler(0f, 0f, rotationAngle), pointerSpeed);
+        pointer.transform.rotation = Quaternion.Lerp(pointer.transform.rotation, Quaternion.Euler(0f, 0f, -rotationAngle), pointerSpeed);
     }       
 
     public void UpdatePutometer(IndividualPutometro passenger){
-        stress -= passenger.stress;
-        if(stress < 0){
+        stress += passenger.stress;
+        if(stress > stressLimit){
             Debug.Log("Game Over");
         }
     }

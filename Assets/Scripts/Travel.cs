@@ -7,7 +7,7 @@ public class Travel : MonoBehaviour
 	[SerializeField] float initialTimer;
 	[SerializeField] string[] stationTypes;
 	private float Stoptime;
-	bool isStopped;
+	public bool isStopped;
 	bool isTheEnd;
 	private int index;
 	[SerializeField] int sizeofArray;
@@ -29,7 +29,7 @@ public class Travel : MonoBehaviour
 			stations[i].distStations = 10 + i;
 			stations[i].travelTime = 10 + i;		
 		}
-		isStopped = false;
+		isStopped = true;
 		isTheEnd = false;
 	}
 	
@@ -39,7 +39,7 @@ public class Travel : MonoBehaviour
 		if(Stoptime > 0 && isStopped == true && index < stationTypes.Length)
 		{
 			//Is stopped in the station
-			Stoptime -= 1;
+			Stoptime -= Time.deltaTime;
 		}
 		else if(Stoptime <= 0 && isStopped == true  && index < stationTypes.Length)
 		{
@@ -66,8 +66,8 @@ public class Travel : MonoBehaviour
 		else if(isStopped == false && stations[index].travelTime > 0 && stations[index].distStations > 0  && index < stationTypes.Length)
 		{
 			//is going to the next station
-			stations[index].travelTime -= 1;	
-			stations[index].distStations -= 1;
+			stations[index].travelTime -= Time.deltaTime;	
+			stations[index].distStations -= Time.deltaTime;
 		}
 		else if(isStopped == false && stations[index].travelTime <= 0 && stations[index].distStations <= 0  && index < stationTypes.Length)
 		{

@@ -7,7 +7,7 @@ public class IndividualPutometro : MonoBehaviour {
     [SerializeField] Passenger passenger;
     private bool repeating = false;
     public float stress = 0f;
-    [SerializeField][Range(0f, 500f)] float maxStress;
+    [Range(0f, 500f)]public float maxStress;
     [SerializeField][Range(0f, 5f)] float stressUp;
     [SerializeField][Range(0f, 5f)] float repeatCooldown;
 
@@ -24,7 +24,6 @@ public class IndividualPutometro : MonoBehaviour {
             CancelInvoke();
             repeating = false;
         }
-
     }
 
     void Awake(){

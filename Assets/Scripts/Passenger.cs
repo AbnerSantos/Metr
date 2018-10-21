@@ -2,6 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public static class PassengerState{
+
+    public enum passengerState{
+        hasAlreadyEntered,
+        waitingForUnderground,
+        lostUnderground
+    };
+
+    public enum station{
+        Red,
+        Yellow,
+        Blue,
+        Green
+    };
+}
 public class Passenger : MonoBehaviour
 {
     public BaseSeatTile currentSeat;
@@ -67,6 +82,12 @@ public class Passenger : MonoBehaviour
     }
     private FacingDirection tempDirection;
 
+    public PassengerState.passengerState state = PassengerState.passengerState.waitingForUnderground;
+    public PassengerState.station station;
+    [SerializeField] Travel underground;
+
+    private RaycastHit2D rayHit;
+    private Vector2 direction;
 
     private void Awake()
     {
@@ -122,13 +143,26 @@ public class Passenger : MonoBehaviour
                 Debug.DrawRay((Vector2)this.transform.position + direction, direction, Color.red, 1f);
                 if(rayHit.collider != null && rayHit.transform.GetComponent<BaseSeatTile>().IsAvailable(this))
                 {
-                    Debug.Log("Hit");
-                    CurrentDirection = tempDirection;
-                    rayHit.transform.GetComponent<BaseSeatTile>().MovePassenger(this);
+                    rayHit = Physics2D.Raycast((Vector2)this.transform.position + direction, direction, 0.5f, mask);
+                    Debug.DrawRay((Vector2)this.transform.position + direction, direction, Color.red, 1f);
+                    if(rayHit.collider != null && rayHit.transform.GetComponent<BaseSeatTile>().IsAvailable(this))
+                    {
+                        Debug.Log("Hit");
+                        CurrentDirection = tempDirection;
+                        rayHit.transform.GetComponent<BaseSeatTile>().MovePassenger(this);
+                    }
                 }
             }
+
+        }
+        
+        if(!underground.isStopped)
+        {
+            if(currentSeat.type == SeatType.seatType.station)
+                state = PassengerState.passengerState.lostUnderground;
+            else
+                state = PassengerState.passengerState.hasAlreadyEntered;
         }
         //PassengerManager.instance.ShowNearbySeatInfo(this);
     }
-
 }

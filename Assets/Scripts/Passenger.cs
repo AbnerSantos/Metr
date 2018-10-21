@@ -92,6 +92,7 @@ public class Passenger : MonoBehaviour
     {
         currentState = State.StandingUp;
         sRender = GetComponent<SpriteRenderer>();
+        underground = GameObject.FindGameObjectWithTag("Underground").GetComponent<Travel>();
     }
     
     public void SnapToSeat()

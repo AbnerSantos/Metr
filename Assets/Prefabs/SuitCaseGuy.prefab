@@ -71,9 +71,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   passenger: {fileID: 0}
   stress: 0
-  maxStress: 0
-  stressUp: 0
-  repeatCooldown: 0
+  maxStress: 100
+  stressingSpeed: 1
+  repeatCooldown: 1
 --- !u!114 &114935665939632796
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -87,7 +87,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentSeat: {fileID: 0}
   type: 0
-  stressingSpeed: 0
   isPassengerSelected: 0
   mask:
     serializedVersion: 2

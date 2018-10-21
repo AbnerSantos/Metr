@@ -19,7 +19,7 @@ public class Putometro : MonoBehaviour {
     }       
 
     public void UpdatePutometer(IndividualPutometro passenger){
-        stress += passenger.stress;
+        stress += passenger.stress / 5;
         if(stress > stressLimit){
             stress = stressLimit;
             SceneManager.LoadScene(2); //Score Scene

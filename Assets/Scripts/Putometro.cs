@@ -17,7 +17,7 @@ public class Putometro : MonoBehaviour {
     }       
 
     public void UpdatePutometer(IndividualPutometro passenger){
-        stress += passenger.stress;
+        stress += passenger.stress / 5;
         if(stress > stressLimit){
             Debug.Log("Game Over");
         }

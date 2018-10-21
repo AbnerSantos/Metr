@@ -9,58 +9,87 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1509488031155470}
+  m_RootGameObject: {fileID: 1302334384719028}
   m_IsPrefabAsset: 1
---- !u!1 &1509488031155470
+--- !u!1 &1302334384719028
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4729545005869958}
-  - component: {fileID: 212388753606404172}
-  - component: {fileID: 114618823442351024}
+  - component: {fileID: 4135661686706080}
+  - component: {fileID: 212296819908473010}
+  - component: {fileID: 114738216618955870}
+  - component: {fileID: 61820322956626682}
   m_Layer: 8
-  m_Name: SpecialSeatTile
+  m_Name: CadeiranteVaga
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4729545005869958
+--- !u!4 &4135661686706080
 Transform:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1509488031155470}
+  m_GameObject: {fileID: 1302334384719028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -3, y: -1.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114618823442351024
+--- !u!61 &61820322956626682
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1302334384719028}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.25}
+    oldSize: {x: 2, y: 2}
+    newSize: {x: 2, y: 2}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2, y: 1}
+  m_EdgeRadius: 0
+--- !u!114 &114738216618955870
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1509488031155470}
+  m_GameObject: {fileID: 1302334384719028}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3180ef3bf5a0518439e3334ad7fa6309, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   passenger: {fileID: 0}
-  seatSize: 0
-  type: 2
---- !u!212 &212388753606404172
+  seatSize: 2
+  currentVacantGap: 0
+  type: 3
+  slot1: {fileID: 0}
+  slot2: {fileID: 0}
+--- !u!212 &212296819908473010
 SpriteRenderer:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1509488031155470}
+  m_GameObject: {fileID: 1302334384719028}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -90,12 +119,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 9efe634f242c94e49bc030a95f3122e0, type: 3}
-  m_Color: {r: 0, g: 0.96969414, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: e605eafd1a2b3204084b942715caaa2e, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 2, y: 2}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1

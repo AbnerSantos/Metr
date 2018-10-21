@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 212861257541595384}
   - component: {fileID: 114548138445297226}
   - component: {fileID: 61959728404383730}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: SeatTile
   m_TagString: Untagged
   m_Icon: {fileID: 0}

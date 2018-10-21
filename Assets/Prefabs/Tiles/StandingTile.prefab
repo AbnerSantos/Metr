@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 212964764901299254}
   - component: {fileID: 114428183705954314}
   - component: {fileID: 61019222997256606}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: StandingTile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -116,7 +116,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 9efe634f242c94e49bc030a95f3122e0, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a3aff82703852034882e85d9eb579ccd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

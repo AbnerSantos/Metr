@@ -210,14 +210,9 @@ public class Passenger : MonoBehaviour
                 Debug.DrawRay((Vector2)this.transform.position + direction, direction, Color.red, 1f);
                 if(rayHit.collider != null && rayHit.transform.GetComponent<BaseSeatTile>().IsAvailable(this))
                 {
-                    rayHit = Physics2D.Raycast((Vector2)this.transform.position + direction, direction, 0.5f, mask);
-                    Debug.DrawRay((Vector2)this.transform.position + direction, direction, Color.red, 1f);
-                    if(rayHit.collider != null && rayHit.transform.GetComponent<BaseSeatTile>().IsAvailable(this))
-                    {
                         Debug.Log("Hit");
                         CurrentDirection = tempDirection;
                         rayHit.transform.GetComponent<BaseSeatTile>().MovePassenger(this);
-                    }
                 }
             }
 

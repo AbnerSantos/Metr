@@ -12,6 +12,11 @@ public class Putometro : MonoBehaviour {
     [SerializeField] GameObject pointer;
 
 	[SerializeField] Travel underground;
+    [SerializeField] float recover;
+
+    void Awake(){
+        InvokeRepeating("RecoverPutomoter", 0, 1);
+    }
     void Update () {
         percentage = (stress * 100) / stressLimit;
         rotationAngle = (percentage / (100f/270)) - 135;
@@ -24,5 +29,11 @@ public class Putometro : MonoBehaviour {
             stress = stressLimit;
             SceneManager.LoadScene(2); //Score Scene
         }
+    }
+
+    private void RecoverPutometer(){
+        stress -= recover;
+        if(stress < 0)
+            stress = 0;
     }
 }

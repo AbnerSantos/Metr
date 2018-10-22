@@ -3,34 +3,36 @@ using UnityEngine.Tilemaps;
 
 public class StationAnim : MonoBehaviour
 {
-    [SerializeField] private float velocity;
     [SerializeField] private Transform warpStart;
     [SerializeField] private Transform warpEnd;
-    private Rigidbody2D stationRigidbody;
+    [SerializeField] private Rigidbody2D stationRigidbody;
+    private Travel travel;
     private bool canStop = false;
     private void Start()
     {
-        stationRigidbody = GetComponent<Rigidbody2D>();
+        travel = GetComponent<Travel>();
     }
-    private void Update()
+    private void FixedUpdate()
     {
-        if (Input.GetKeyDown(KeyCode.G))
+        if (!travel.isStopped)
         {
             PlayAnim();
         }
-        if (transform.position.x >= warpStart.position.x)
+        if (stationRigidbody.position.x >= warpStart.position.x)
         {
             stationRigidbody.position = warpEnd.position;
             canStop = true;
         }
-        else if (canStop && transform.position.x >= 0f)
+        else if (canStop && stationRigidbody.position.x >= 0f)
         {
             stationRigidbody.velocity = Vector2.zero;
             canStop = false;
+            travel.isStopped = true;
         }
     }
     public void PlayAnim()
     {
+        float velocity = Random.Range(travel.minRange, travel.maxRange);
         stationRigidbody.velocity = new Vector2(velocity, 0f);
     }
 };

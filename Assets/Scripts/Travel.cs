@@ -5,8 +5,8 @@ using UnityEngine;
 public class Travel : MonoBehaviour 
 {
 	[SerializeField] float timeInStation;
-	[SerializeField] int minRange;
-	[SerializeField] int maxRange;
+	[SerializeField] public int minRange;
+	[SerializeField] public int maxRange;
 	[SerializeField] string[] stationTypes;
 	private float Stoptime;
 	public bool isStopped;
@@ -42,7 +42,7 @@ public class Travel : MonoBehaviour
 		{
 			//Is stopped in the station
 			Stoptime -= Time.deltaTime;
-			currentStation = stations[index].type;
+			currentStation = stations[index + 1].type;
 		}
 		else if(Stoptime <= 0 && isStopped == true  && index < stationTypes.Length)
 		{
@@ -80,7 +80,7 @@ public class Travel : MonoBehaviour
 		}
 		else if(isStopped == false && stations[index].travelTime <= 0 && stations[index].distStations <= 0  && index < stationTypes.Length)
 		{
-			isStopped = true;
+			// isStopped = true;
 		}
 	}
 }

@@ -8,6 +8,9 @@ public class MainMenu : MonoBehaviour {
 	[SerializeField] GameObject options;
 	[SerializeField] GameObject score;
 
+	public AudioClip audioClip;
+	public AudioSource audioSource;
+
 	private enum scenes{
 		mainMenu = 0,
 		firstLevel = 1
@@ -17,10 +20,12 @@ public class MainMenu : MonoBehaviour {
 	private void Start(){
 		credits.SetActive(false);		
 		options.SetActive(false);		
+		audioSource.Play();
 	}
 
 	public void PlayGame(){
 		DontDestroyOnLoad(score);
+		audioSource.Stop();
 		SceneManager.LoadScene((int)scenes.firstLevel);
 	}
 

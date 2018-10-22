@@ -9,6 +9,7 @@ TagManager:
   - Underground
   - ScoreText
   - Score
+  - AudioSource
   layers:
   - Default
   - TransparentFX

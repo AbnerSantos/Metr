@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 81e06577160fa9744ada4cc826c3abdd
   - enabled: 1
+    path: Assets/Scenes/Abner.unity
+    guid: 3f26a49420f94a3479aa734b9c0084ca
+  - enabled: 0
     path: Assets/Scenes/Henrique.unity
     guid: 0e61c32b1b9755346bf6e586197677d8
   - enabled: 1

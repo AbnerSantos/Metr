@@ -18,6 +18,7 @@ public class PassengerSpawner : MonoBehaviour
 			Instantiate(passengers[pIndex], passengerSlots[i].transform.position, Quaternion.identity);
 			pg = passengers[pIndex].GetComponent<Passenger>();
 			seat = passengerSlots[i].GetComponent<BaseSeatTile>();
+			pg.currentSeat = seat;
 			seat.MovePassenger(pg);
 		}
 	}

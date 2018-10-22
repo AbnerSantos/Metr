@@ -13,8 +13,13 @@ public class Score : MonoBehaviour {
 	[SerializeField] bool repeating = false;
 	[SerializeField] Travel underground;
 	[SerializeField] TextMeshProUGUI scoreText;
-	
+	AudioSource audioS;
 
+	void Awake()
+	{
+		audioS = GameObject.FindGameObjectWithTag("AudioSource").GetComponent<AudioSource>();
+		audioS.Play();
+	}
 	void ScoreCounter(){
 		repeating = true;
 		time++;
@@ -34,8 +39,6 @@ public class Score : MonoBehaviour {
 			scoreText = GameObject.FindGameObjectWithTag("ScoreText").GetComponent<TextMeshProUGUI>();
 			scoreText.text = score.ToString();
 		}
-		if(underground != null && underground.isTheEnd){
-			SceneManager.LoadScene(2);
-		}
+		
 	}
 }

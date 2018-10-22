@@ -13,8 +13,6 @@ public class Score : MonoBehaviour {
 	[SerializeField] bool repeating = false;
 	[SerializeField] Travel underground;
 	[SerializeField] TextMeshProUGUI scoreText;
-	
-	AudioClip audioC;
 	AudioSource audioS;
 
 	void Awake()

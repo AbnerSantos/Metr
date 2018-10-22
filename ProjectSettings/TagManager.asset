@@ -8,7 +8,7 @@ TagManager:
   - Putometro
   - Underground
   - ScoreText
-  - AudioSource
+  - Score
   layers:
   - Default
   - TransparentFX

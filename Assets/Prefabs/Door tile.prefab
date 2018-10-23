@@ -21,8 +21,9 @@ GameObject:
   - component: {fileID: 4683871569264280}
   - component: {fileID: 114026345940769878}
   - component: {fileID: 61806632644328144}
+  - component: {fileID: 114327861310449522}
   m_Layer: 8
-  m_Name: Spawn
+  m_Name: Door tile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -88,3 +89,14 @@ MonoBehaviour:
   passengerPutometro: {fileID: 0}
   passengerScript: {fileID: 0}
   station: 0
+--- !u!114 &114327861310449522
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1010876147980026}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 064b131b66dce4a46a19476079192b76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

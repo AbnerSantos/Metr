@@ -34,19 +34,22 @@ public class Passenger : MonoBehaviour
         get { return currentState; }
         set
         {
-            switch(value)
+            if (sRender)
             {
-                case State.StandingUp:
-                    sRender.sprite = standingUp;
-                    break;
-                case State.SharingSlot:
-                    sRender.sprite = sharingTile;
-                    break;
-                case State.SittingDown:
-                    sRender.sprite = sittingDown;
-                    break;
-                default:
-                    break;
+                switch(value)
+                {
+                    case State.StandingUp:
+                        sRender.sprite = standingUp;
+                        break;
+                    case State.SharingSlot:
+                        sRender.sprite = sharingTile;
+                        break;
+                    case State.SittingDown:
+                        sRender.sprite = sittingDown;
+                        break;
+                    default:
+                        break;
+                }
             }
         }
     }
@@ -206,18 +209,18 @@ public class Passenger : MonoBehaviour
 
             if(direction != Vector2.zero)
             {
-                rayHit = Physics2D.Raycast((Vector2)this.transform.position + direction, direction, 0.5f, mask);
+                rayHit = Physics2D.Raycast((Vector2)this.transform.position + direction, direction, 0.3f, mask);
                 Debug.DrawRay((Vector2)this.transform.position + direction, direction, Color.red, 1f);
                 if(rayHit.collider != null && rayHit.transform.GetComponent<BaseSeatTile>().IsAvailable(this))
                 {
-                    rayHit = Physics2D.Raycast((Vector2)this.transform.position + direction, direction, 0.5f, mask);
-                    Debug.DrawRay((Vector2)this.transform.position + direction, direction, Color.red, 1f);
-                    if(rayHit.collider != null && rayHit.transform.GetComponent<BaseSeatTile>().IsAvailable(this))
-                    {
-                        Debug.Log("Hit");
-                        CurrentDirection = tempDirection;
-                        rayHit.transform.GetComponent<BaseSeatTile>().MovePassenger(this);
-                    }
+                    // rayHit = Physics2D.Raycast((Vector2)this.transform.position + direction, direction, 0.5f, mask);
+                    // Debug.DrawRay((Vector2)this.transform.position + direction, direction, Color.red, 1f);
+                    // if(rayHit.collider != null && rayHit.transform.GetComponent<BaseSeatTile>().IsAvailable(this))
+                    // {
+                    Debug.Log("Hit");
+                    CurrentDirection = tempDirection;
+                    rayHit.transform.GetComponent<BaseSeatTile>().MovePassenger(this);
+                    // }
                 }
             }
 

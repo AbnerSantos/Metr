@@ -10,18 +10,23 @@ public class StationTile : BaseSeatTile{
     [SerializeField] PassengerState.station station;
 
     void Update(){
-        if(passenger != null && passenger.GetComponent<Passenger>().state != PassengerState.passengerState.waitingForUnderground){
-            putometro = GameObject.FindGameObjectWithTag("Putometro");
-            passengerPutometro = passenger.GetComponent<IndividualPutometro>();
-            putometroScript = putometro.GetComponent<Putometro>();
-            passengerScript = passenger.GetComponent<Passenger>();
-            
-            if(passengerScript.state == PassengerState.passengerState.lostUnderground|| passengerScript.station != station){
-                passengerPutometro.stress = passengerPutometro.maxStress;
-            }
+        if (passenger)
+        {
+            Passenger passengerPassenger = passenger.GetComponent<Passenger>();
 
-            putometroScript.UpdatePutometer(passengerPutometro);
-            Destroy(passenger);
-        }   
+            if(passenger != null && passengerPassenger.state != PassengerState.passengerState.waitingForUnderground){
+                putometro = GameObject.FindGameObjectWithTag("Putometro");
+                passengerPutometro = passenger.GetComponent<IndividualPutometro>();
+                putometroScript = putometro.GetComponent<Putometro>();
+                passengerScript = passenger.GetComponent<Passenger>();
+                
+                if(passengerScript.state == PassengerState.passengerState.lostUnderground|| passengerScript.station != station){
+                    passengerPutometro.stress = passengerPutometro.maxStress;
+                }
+
+                putometroScript.UpdatePutometer(passengerPutometro);
+                Destroy(passenger);
+            }   
+        }
     }
 }

@@ -30,23 +30,26 @@ public class BaseSeatTile : MonoBehaviour
 	public virtual void MovePassenger(Passenger passenger)
 	{
 		Debug.Log("Man");
-
-		if(passenger.currentSeat.slot1 == passenger)
-			passenger.currentSeat.slot1 = null;
-		else if(passenger.currentSeat.slot2 == passenger)
-			passenger.currentSeat.slot2 = null;
-
-		if(passenger.currentSeat.type == SeatType.seatType.stand)
+		if(passenger.currentSeat != null)
 		{
-			if(passenger.currentSeat.slot1 != null)
-				passenger.currentSeat.slot1.transform.position = passenger.currentSeat.slot1.currentSeat.transform.position;
-			else if(passenger.currentSeat.slot2 != null)
-				passenger.currentSeat.slot2.transform.position = passenger.currentSeat.slot2.currentSeat.transform.position;
-		}
 
-		passenger.currentSeat.passenger = null;
-		passenger.currentSeat.isCrowded = false;
-		passenger.currentSeat.currentVacantGap += passenger.size;
+			if(passenger.currentSeat.slot1 == passenger)
+				passenger.currentSeat.slot1 = null;
+			else if(passenger.currentSeat.slot2 == passenger)
+				passenger.currentSeat.slot2 = null;
+
+			if(passenger.currentSeat.type == SeatType.seatType.stand)
+			{
+				if(passenger.currentSeat.slot1 != null)
+					passenger.currentSeat.slot1.transform.position = passenger.currentSeat.slot1.currentSeat.transform.position;
+				else if(passenger.currentSeat.slot2 != null)
+					passenger.currentSeat.slot2.transform.position = passenger.currentSeat.slot2.currentSeat.transform.position;
+			}
+
+			passenger.currentSeat.passenger = null;
+			passenger.currentSeat.isCrowded = false;
+			passenger.currentSeat.currentVacantGap += passenger.size;
+		}
 		passenger.currentSeat = this;
 
 		this.passenger = passenger.gameObject;
